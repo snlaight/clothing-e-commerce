@@ -10,10 +10,11 @@
     "client": "cd client && npm start",
     "server": "nodemon server.js",
     "build": "cd client && npm run build",
+    "install:client": "npm install --prefix client",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "install-all": "npm install && cd client && npm install"
+    "install-all": "npm install && npm install:client"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
